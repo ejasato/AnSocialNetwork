@@ -10,13 +10,13 @@ const userSchema = new Schema (
             required: true,
             trim: true,
         },
-        emal: {
+        email: {
             type: String,
             required: true,
-            unique: [true, 'User email required'],
+            unique: true,
             validate: {
                 validator: function(v){
-                    return /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.text(v);
+                    return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v);
                 },
                 message: props => `${props.value} is not a valid email address!`
             },
