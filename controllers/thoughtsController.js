@@ -79,7 +79,7 @@ module.exports = {
         return res.status(500).json(err);
       });
   },
-  //delete a reaction using a reaction Id
+  //delete a reaction using a reaction Id with the pull operator
   deleteReaction(req, res) {
     Thought.findOneAndUpdate(
       { _id: req.params.thoughtId },
