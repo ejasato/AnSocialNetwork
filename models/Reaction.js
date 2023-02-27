@@ -1,10 +1,12 @@
-const { Schema } = require('mongoose');
+const { Schema, Types } = require('mongoose');
 
 //schema for reaction will be used as subdocument for thought model
 const reactionSchema = new Schema(
     {
         reationId: {
-            type: Schema.Types.ObjectId},
+            type: Schema.Types.ObjectId,
+            default: () => new Types.ObjectId(),
+        },
         reactionBody: {
             type: String,
             required: true,

@@ -2,7 +2,7 @@ const { Schema, model } = require('mongoose');
 // const thoughtsSchema = require('./Thought');
 
 // Schema to create a User Model
-const userSchema = new Schema (
+const userSchema = new Schema(
     {
         username: {
             type: String,
@@ -15,19 +15,19 @@ const userSchema = new Schema (
             required: true,
             unique: true,
             validate: {
-                validator: function(v){
+                validator: function (v) {
                     return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v);
                 },
                 message: props => `${props.value} is not a valid email address!`
             },
         },
-        thoughts: [        {
+        thoughts: [{
             type: Schema.Types.ObjectId,
-            ref: 'Thought'
+            ref: 'thought'
         }],
         friends: [{
             type: Schema.Types.ObjectId,
-            ref: 'User',
+            ref: 'user',
         }],
     },
     {
@@ -40,7 +40,7 @@ const userSchema = new Schema (
 //virtual to retrieve the length of the users friends array field
 userSchema
     .virtual('friendCount')
-    .get(function() {
+    .get(function () {
         return this.friends.length;
     })
 

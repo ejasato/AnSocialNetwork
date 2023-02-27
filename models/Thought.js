@@ -31,10 +31,10 @@ const thoughtSchema = new Schema(
 
 //virtual to retrieve the length of the thoughts reaction
 thoughtSchema
-        .virtual('reactionCount')
-        .get(function() {
-            return this.reactions.length;
-        })
+    .virtual('reactionCount')
+    .get(function () {
+        return this.reactions.length;
+    })
 
 const Thought = model('Thought', thoughtSchema);
 

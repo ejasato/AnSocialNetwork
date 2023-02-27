@@ -17,6 +17,8 @@
 
   ## Usage
   This is supposed to be used with a seperate front end as this is just the backend.  In its current format it can only be used using a seperate application that can do CRUD operations.
+  walkthrough video:
+  https://drive.google.com/file/d/1bWi3NWH6TT1flAfYdJAH8l0jpG_JNmWx/view
 
   ## Credits
   base code came from the class.
